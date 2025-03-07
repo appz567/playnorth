@@ -1,3 +1,7 @@
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+import { useDispatch, useSelector } from "react-redux";
+
 import { GameList } from "@/components/GameList/GameList";
 import {
   getDataPerCategory,
@@ -15,9 +19,7 @@ import {
 } from "@/store/slices/casinoGames/selectors";
 import { AppDispatch } from "@/store/types";
 import { getGameCollection, getPageByCategoryName } from "@/utils/path";
-import { useRouter } from "next/router";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { Loading } from "@/components/Loading/Loading";
 
 const CategoryPage = () => {
   const router = useRouter();
@@ -51,11 +53,7 @@ const CategoryPage = () => {
   }, [dispatch, slug, currentPage, itemsPerPage]);
 
   if (loading) {
-    return (
-      <div className="loading">
-        <p>Loading...</p>
-      </div>
-    );
+    return <Loading />;
   }
 
   if (error) {
