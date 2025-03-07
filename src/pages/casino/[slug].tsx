@@ -38,7 +38,7 @@ const CategoryPage = () => {
     dispatch(
       getImportantData(getPageByCategoryName(categories, slug as string))
     );
-  }, [dispatch, selectedCategory]);
+  }, [selectedCategory]);
 
   useEffect(() => {
     dispatch(

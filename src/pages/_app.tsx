@@ -3,18 +3,14 @@ import { Provider } from "react-redux";
 
 import { store } from "@/store/store";
 import { Layout } from "@/layout/Layout";
-import { FooterProps } from "@/components/Footer/types";
 
 import "../styles/global.scss";
 
-interface CustomAppProps extends AppProps {
-  footerContent: FooterProps; // Extend AppProps to include footerContent
-}
 
 export default function MyApp({
   Component,
   pageProps,
-}: CustomAppProps) {
+}: AppProps) {
   return (
     <Provider store={store}>
       <Layout>
@@ -35,25 +31,3 @@ export async function getStaticProps() {
     },
   }
 }
-
-// MyApp.getInitialProps = async () => {
-//   try {
-//     const res = await axios.get(`${API_URL}/en/config`);
-//     return {
-//       footerContent: res.data?.footerContent || {
-//         footerContent: {
-//           logoUrl: "",
-//           links: [],
-//           licenseLogos: [],
-//           copyright: "",
-//           licenseText: "",
-//           responsibleGambling: "",
-//           providerLogos: [],
-//         },
-//       },
-//     };
-//   } catch (error) {
-//     console.error("Error fetching footer content:", error);
-//     return { footerContent: [] };
-//   }
-// };
