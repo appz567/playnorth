@@ -1,0 +1,14 @@
+@import '../components/GameCard/GameCard.scss';
+@import '../components/GameList/GameList.scss';
+@import '../components/Menu//Menu.scss';
+@import '../components/Pagination//Pagination.scss';
+@import '../components/SearchBar/SearchBar.scss';
+@import '../layout/Layout.scss';
+
+body {
+    background-color: #121212;
+}
+.loading {
+    color: white;
+    font-size: x-large
+}

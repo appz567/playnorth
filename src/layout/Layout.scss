@@ -1,0 +1,14 @@
+.layout {
+  height: 100%;
+  width: 100%;
+
+  .main-screen-wrapper {
+    display: flex;
+
+    @media only screen and (max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
